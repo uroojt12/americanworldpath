@@ -1,0 +1,101 @@
+/*
+|----------------------------------------------------------------------
+|       Body
+|----------------------------------------------------------------------
+*/
+
+body {
+  @include mobile_sm {
+    font-size: 1.4rem;
+  }
+}
+
+#root {
+  padding-top: 8rem;
+  overflow: initial;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &.tag {
+    @include i_flex(center);
+    background: rgba($green, 0.2);
+    color: $green;
+    font-weight: 500;
+    padding: 0.6rem 1.2rem;
+    text-transform: uppercase;
+    border-radius: 5rem;
+  }
+  &.heading {
+    // text-transform: capitalize;
+    > span {
+      background: linear-gradient(36deg, $color, $color2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.input {
+  height: 5rem;
+  border-radius: 0.5rem;
+}
+
+#oops {
+  background: $light;
+  .contain {
+    position: relative;
+    z-index: 3;
+  }
+  .icon {
+    font-size: 16rem;
+  }
+}
+
+#cover {
+  background: $light;
+  &:before {
+    @include overlay($color, 0.07);
+  }
+  .content {
+    color: $black;
+    > h1,
+    > p {
+      text-shadow: none;
+    }
+  }
+}
+
+.check_list {
+  @include list;
+  @include flex($flow: wrap);
+  margin: -0.2rem -1.5rem;
+  > li {
+    padding: 0.2rem 1.5rem;
+    label {
+      @include flex(center);
+      span {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+.contain-fluid {
+  max-width: none;
+  padding: 0 6rem;
+  @include ipad_sm {
+    padding: 0 1.5rem;
+  }
+}
+
+
+
+
+
+

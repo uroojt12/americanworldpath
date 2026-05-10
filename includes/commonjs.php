@@ -1,0 +1,13 @@
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<!-- <script src="js/animation.min.js"></script>
+<script src="js/slick.js"></script>
+<script src="js/lightgallery-all.min.js"></script>
+<script src="js/lightslider.min.js"></script> -->
+<script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>

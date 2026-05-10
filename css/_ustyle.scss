@@ -1,0 +1,520 @@
+@mixin image_o($padding-bottom: 0, $object-fit: cover) {
+  position: relative;
+  padding-bottom: $padding-bottom;
+
+  img {
+    @include pos;
+    height: 100%;
+    width: 100%;
+    object-fit: $object-fit;
+  }
+}
+@mixin ipad_b {
+  @media (max-width: 1025x) {
+    @content;
+  }
+}
+@mixin mobile_b {
+  @media (max-width: 769px) {
+    @content;
+  }
+}
+// =====
+.sec_first {
+  padding-top: 0;
+  .col {
+    width: 50%;
+    @include ipad_sm {
+      width: 100%;
+    }
+  }
+  .col1 {
+    padding-right: 40px;
+    align-self: center;
+    strong {
+      font-family: "Medium Italic";
+
+      color: #5c4033;
+    }
+    .btn_blk {
+      margin-top: 20px;
+    }
+    @include ipad_sm {
+      padding-right: 0;
+      padding-bottom: 20px;
+    }
+  }
+  .col2 {
+    .image {
+      @include image_o(55rem, cover);
+      @include radius(10px);
+      overflow: hidden;
+      @include mobile_md {
+        padding-bottom: 31rem;
+      }
+    }
+  }
+}
+// ==== sec_grids ===
+.sec_grids {
+  padding-top: 0;
+  .sec_heading {
+    max-width: 77rem;
+    margin: 0 auto 20px;
+    text-align: center;
+  }
+  .flex {
+    .col {
+      width: calc(100% / 4);
+      padding: 20px;
+      @include ipad_sm {
+        width: calc(100% / 2);
+      }
+      @include mobile_md {
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .inner {
+        padding: 40px 15px;
+        @include radius(40px);
+        background: rgba(196, 185, 126, 0.52);
+        // box-shadow: 0px 0px 8px rgb(0 0 0 / 15%);
+        text-align: center;
+        .image {
+          width: 100px;
+          height: 100px;
+          @include radius(100%);
+          margin: 0 auto 20px;
+        }
+        h5 {
+          margin-bottom: 3px;
+        }
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+// === sec_lgrids==
+.sec_lgrids {
+  padding-top: 0;
+  .sec_heading {
+    max-width: 65rem;
+    margin-bottom: 30px;
+  }
+  .flex {
+    .col {
+      width: calc(100% / 4);
+      @include mobile_md {
+        width: calc(100% / 2);
+      }
+      .inner {
+        .image {
+          @include image_o(40rem, cover);
+          .content {
+            position: absolute;
+            display: flex;
+            bottom: 20px;
+            justify-content: center;
+            width: 100%;
+            h5 {
+              color: $light;
+              margin-bottom: 0;
+              position: relative;
+              font-size: 20px;
+              &::before {
+                @include pos($t: 4px, $l: -24px);
+                background: #c4b97e;
+                width: 11px;
+                height: 11px;
+                content: "";
+                transform: rotate(45deg);
+              }
+              &::after {
+                @include pos($t: 4px, $r: -24px, $l: unset);
+                background: #c4b97e;
+                width: 11px;
+                height: 11px;
+                content: "";
+                transform: rotate(45deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// ==== sec_Igrid
+.sec_Igrid {
+  padding-top: 0;
+  .col {
+    width: 50%;
+    @include ipad_sm {
+      width: 100%;
+    }
+  }
+  .col1 {
+    padding-right: 140px;
+    align-self: center;
+    .cta {
+      margin-top: 20px;
+    }
+    @include ipad_sm {
+      padding-right: 0;
+      padding-bottom: 15px;
+    }
+  }
+  .col2 {
+    .overlap-grid {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      .item {
+        &:first-child {
+          width: 100%;
+          margin-top: 0;
+          // margin-left:15%;
+          z-index: 3;
+          @include ipad_sm {
+            width: 78%;
+            margin-left: auto;
+          }
+          @include mobile_md {
+            width: 76%;
+          }
+          figure {
+            overflow: hidden;
+            @include image_o(45rem, cover);
+            @include radius(10px);
+            @include mobile_md {
+              padding-bottom: 28rem;
+            }
+          }
+        }
+        &:last-child {
+          width: 34%;
+          margin-top: -28%;
+          margin-left: -79px;
+          z-index: 4;
+          @include ipad_b {
+            width: 58%;
+          }
+          @include ipad_sm {
+            width: 44%;
+            margin-top: -25%;
+            margin-left: 0px;
+            z-index: 4;
+          }
+          @include mobile_md {
+            width: 61%;
+            margin-top: -29%;
+            margin-left: 0px;
+          }
+          figure {
+            overflow: hidden;
+            @include image_o(24rem, cover);
+            @include radius(10px);
+          }
+        }
+      }
+    }
+  }
+}
+// ===== sec_tgrid
+.sec_tgrid {
+  &.blog_detail {
+    padding-top: 11rem;
+    .flex {
+      .col {
+        width: 100% !important;
+        .image {
+          padding-bottom: 36rem !important;
+        }
+      }
+    }
+  }
+  padding-top: 0;
+  .sec_heading {
+    max-width: 96rem;
+    margin: 0 auto 50px;
+    text-align: center;
+  }
+  .flex {
+    justify-content: center;
+    .col {
+      width: calc(100% / 4);
+      padding: 10px;
+      @include ipad_b {
+        width: 50%;
+      }
+      @include mobile_md {
+        width: 100%;
+        padding: 10px 0;
+      }
+      &:nth-child(2) {
+        width: 50%;
+        @include mobile_md {
+          width: 100%;
+        }
+      }
+      .inner {
+        background: rgba(217, 212, 181, 0.61);
+        height: 100%;
+        ul {
+          padding-left: 0;
+          display: flex;
+          padding-bottom: 10px;
+          margin-bottom: 15px;
+          gap: 15px;
+          border-bottom: 1px solid #5c4033;
+          li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            h6 {
+              margin-bottom: 0;
+            }
+          }
+        }
+        .image {
+          @include image_o(23rem, cover);
+        }
+        .content {
+          padding: 20px;
+          .cta {
+            a {
+              font-family: "bold";
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// ==== sec_contact ====
+.sec_contact {
+  padding-top: 0;
+  &.sec_reserve {
+    .col2 {
+      max-width: 95rem;
+      width: 95rem !important;
+
+      margin: 0 auto;
+      @include mobile_md {
+        width: 100%;
+        max-width: unset;
+      }
+      .bTn {
+        width: fit-content !important;
+        margin: 40px auto 0;
+      }
+    }
+  }
+  .mapouter {
+    padding-top: 8rem;
+    position: relative;
+    text-align: right;
+
+    width: 100%;
+    iframe {
+      height: 600px;
+    }
+  }
+  .col1 {
+    width: 40%;
+    padding-right: 15px;
+    @include ipad_sm {
+      width: 100%;
+      padding-right: 0;
+      padding-bottom: 10px;
+    }
+    .inner {
+      background: #f3f3f3;
+      @include radius(10px);
+      padding: 30px;
+      ul {
+        padding-left: 0;
+        margin-bottom: 0;
+        li {
+          display: flex;
+          list-style: none;
+          align-items: center;
+          padding: 25px 0;
+          border-bottom: 1px solid #eceef1;
+          gap: 15px;
+          a {
+            display: block;
+          }
+          span {
+            color: #c4b97e;
+          }
+          &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+          }
+          .image {
+            width: 50px;
+            height: 50px;
+            padding: 13px;
+            @include radius(5px);
+            background: $light;
+          }
+          .content {
+            width: 80%;
+            h6 {
+              margin-bottom: 3px;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .col2 {
+    width: 60%;
+    @include ipad_sm {
+      width: 100%;
+    }
+    .inner {
+      background: #e0dbbc;
+      @include radius(10px);
+      padding: 50px 40px;
+      @include mobile_md {
+        padding: 50px 20px;
+      }
+      .top {
+        max-width: 44rem;
+        margin: 0 auto 50px;
+        text-align: center;
+        @include mobile_md {
+          margin: 0 auto 25px;
+        }
+      }
+      form {
+        .txtGrp {
+          margin-bottom: 15px;
+          position: relative;
+          .icons {
+            position: absolute;
+            right: 10px;
+            top: 16px;
+          }
+          .input {
+            height: 52px;
+            padding-right: 30px;
+            border: 1px solid #eaeaea;
+            font-family: "body Regular";
+
+            ::placeholder {
+              color: #74787c;
+              font-family: "body Regular";
+            }
+          }
+
+          textarea.input {
+            height: 130px;
+            resize: none;
+          }
+        }
+        .bTn {
+          width: 100%;
+          .site_btn {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sec_tgrid .flex .col .inner .content .cta {
+  margin-top: 20px;
+}
+.sec_tgrid .flex .col .inner .content .cta a {
+  font-family: "Poppins Medium" !important;
+}
+
+.sec_tgrid .flex .col .inner ul li h6 {
+  font-family: "Poppins Medium" !important;
+}
+.event_detail_banner {
+  .cntnt_b {
+    max-width: 57rem;
+    text-align: center;
+    margin: 0 auto 3rem;
+
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.8rem;
+    }
+  }
+
+  .image {
+    @include img(40%);
+    box-shadow: none;
+
+    img {
+      @include object;
+      @include pos;
+    }
+  }
+}
+
+.u_feature {
+  .flex {
+    .col {
+      padding: 10px;
+      .inner {
+        height: 100%;
+        .icons {
+          width: 73px;
+          height: 73px;
+          margin: 0 auto 14px;
+        }
+      }
+    }
+  }
+}
+
+.cta_section {
+  background-color: $color;
+  text-align: center;
+  padding: 6rem 2rem;
+
+  h2 {
+    color: $light;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    color: $light;
+    font-size: 1.8rem;
+    max-width: 60rem;
+    margin: 0 auto 2rem;
+  }
+  .cta {
+    width: fit-content;
+    margin: 0 auto;
+  }
+}
+.detail_content_section {
+  padding-top: 0rem;
+  margin-top: -7rem;
+  @include mobile_md {
+    margin-top: -2rem;
+  }
+  padding-bottom: 3rem;
+  .bullet_points {
+    padding-left: 20px;
+    padding-top: 10px;
+  }
+  .block {
+    margin-top: 15px;
+  }
+}
